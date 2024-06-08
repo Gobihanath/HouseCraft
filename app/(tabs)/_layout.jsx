@@ -4,6 +4,7 @@ import { Tabs } from 'expo-router'
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import {Colors} from './../../constants/Colors.ts'
+import { MaterialIcons } from '@expo/vector-icons';
 
 
 const TabLayout = () => {
@@ -18,7 +19,7 @@ const TabLayout = () => {
       <Tabs.Screen name='explore'
         options={{
           tabBarLabel:'Explore',
-          tabBarIcon:({color})=><Ionicons name="search" size={24} color={color} />
+          tabBarIcon:({color})=><MaterialIcons name="explore" size={24} color={color}/>
         }}
       />
       <Tabs.Screen name='profile'
