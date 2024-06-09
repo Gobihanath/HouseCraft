@@ -9,7 +9,7 @@ import { useRouter } from 'expo-router'
 
 
 
-const Category = () => {
+const Category = ({explore=false,onCategorySelect}) => {
   
   
   const[categoryList,setCategoryList] = useState([]);
@@ -35,8 +35,18 @@ const Category = () => {
   }
 
 
+  const onCategoryPressHandler=(item)=>{
+    if(!explore){
+       router.push('/businesslist/'+item.name)
+    }
+    else {
+      onCategorySelect(item.name)
+    }
+  }
+   
   return (
     <View>
+    {!explore&&
         <View style={{
             padding:20,
             display:'flex',
@@ -54,7 +64,7 @@ const Category = () => {
                color :Colors.PRIMARY,
                fontFamily:"outfit-medium",
             }}>View All</Text>
-        </View>
+        </View>}
 
         <FlatList
 
@@ -68,7 +78,9 @@ const Category = () => {
             <CategoryItem 
              category={item}
              key={index}
-             onCategoryPress={(category)=>router.push('/businesslist/'+item.name)}
+             onCategoryPress={(category)=>
+               onCategoryPressHandler(item)
+            }
 
              />
           )}
