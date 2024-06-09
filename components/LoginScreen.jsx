@@ -57,7 +57,7 @@ const LoginScreen = () => {
 
             <Text style={{
                 fontSize:30,
-                fontFamily:'outfit-bold',
+                fontFamily:'outfit-medium',
                 textAlign:'center',
 
             }}>Your Ultimate 

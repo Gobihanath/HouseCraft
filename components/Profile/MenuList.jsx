@@ -20,7 +20,7 @@ const MenuList = () => {
             id:2,
             name:"My Business",
             icon:require("../../assets/images/briefcase.png"),
-            path:''
+            path:'/business/my-business'
 
         },
 

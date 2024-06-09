@@ -21,7 +21,10 @@ const BusinessListByCategory = () => {
   useEffect(()=>{
     navigation.setOptions({
         headerShown:true,
-        headerTitle:category
+        headerTitle:category,
+        headerStyle:{
+                backgroundColor:Colors.PRIMARY
+            }
     })
     getBusinessList();
   },[])  
@@ -66,7 +69,7 @@ const BusinessListByCategory = () => {
       />:
       <Text style={{
         fontSize:20,
-        fontFamily:"outfit-bold",
+        fontFamily:"outfit-medium",
         color:Colors.PRIMARY,
         textAlign:"center",
         marginTop:'70%'

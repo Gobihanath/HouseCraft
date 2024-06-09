@@ -27,7 +27,7 @@ export default function PopularBusinessCard({business}) {
       />
       <View style={{marginTop:7,gap:5}}>
         <Text style={{
-            fontFamily:"outfit-bold",
+            fontFamily:"outfit-medium",
             fontSize:17,
         }}>{business.name}</Text>
 
