@@ -1,6 +1,8 @@
 import { View, Text, Image } from 'react-native'
 import React from 'react'
 import img1 from './../assets/images/login.png';
+import img2 from './../assets/images/login1.png'
+import img3 from './../assets/images/login3.png'
 import { Colors } from '../constants/Colors.ts';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import * as WebBrowser from "expo-web-browser";
@@ -32,47 +34,55 @@ const LoginScreen = () => {
 
 
   return (
-    <View>
+    <View style={{
+      backgroundColor:Colors.PRIMARY
+    }}>
 
         <View style={{
             display:'flex',
             alignItems: 'center',
-            marginTop:80,
+            marginTop:150,
 
         }}>
       
-        <Image source={img1}
+        <Image source={img3}
         style={{
             width:230,
-            height:450,
+            height:230,
             borderRadius:20,
             borderWidth:2,
-            borderColor:'black'
+            borderColor:'black',
+            
         }}
         />
 
        </View>
 
        <View style={styles.subContainer}>
-
+          <View style={{
+            marginHorizontal:10
+          }}>
             <Text style={{
                 fontSize:30,
                 fontFamily:'outfit-medium',
                 textAlign:'center',
+                marginTop:30
 
-            }}>Your Ultimate 
+            }}>Welcome to our new
             <Text style={{
                 color:Colors.PRIMARY
-            }}> Community Business Directory</Text> App</Text>
+            }}> Building  Design Craft</Text> App</Text>
+
+       </View>
         <Text style={{
             fontSize:15,
             fontFamily:'outfit',
             textAlign:"center",
             marginVertical:15,
-            paddingHorizontal:20,
+            paddingHorizontal:10,
             color:Colors.GRAY
-
-        }}>Find Your Favorite business near you aand post your business</Text>
+        
+        }}>Find Your Favorite building and home designs by expert architects and share your Designs.</Text>
         <TouchableOpacity style={styles.btn} onPress={onPress}>
             <Text style={{
                 textAlign:'center',
@@ -91,14 +101,18 @@ const LoginScreen = () => {
 const styles = StyleSheet.create({
     subContainer: {
         backgroundColor:"#fff",
-        padding: 20,
-        margin:-50,
+        padding: 0,
+        height:350,
+        width:"100%",
+        marginTop:100,
+        borderTopRightRadius:30,
+        borderTopLeftRadius:30
        },
     btn:{
         backgroundColor:"black",
         padding:16,
         borderRadius:50,
-        marginHorizontal:40,
+        marginHorizontal:10,
         marginTop:20
 
     }

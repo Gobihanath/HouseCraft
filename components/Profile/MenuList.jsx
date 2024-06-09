@@ -1,11 +1,12 @@
-import { View, Text, FlatList, Image, TouchableOpacity } from 'react-native'
+import { View, Text, FlatList, Image, TouchableOpacity, Share } from 'react-native'
 import React from 'react'
 import { Colors } from '../../constants/Colors'
 import { useRouter } from 'expo-router'
+import { SignedOut, useAuth } from '@clerk/clerk-expo'
 
 const MenuList = () => {
 
-
+   const {signOut} =useAuth();
 
     const menuList=[
         {
@@ -28,7 +29,7 @@ const MenuList = () => {
             id:3,
             name:"Share App",
             icon:require("../../assets/images/share1.png"),
-            path:''
+            path:'share'
 
         },
 
@@ -36,7 +37,7 @@ const MenuList = () => {
             id:4,
             name:"Log Out",
             icon:require("../../assets/images/round.png"),
-            path:''
+            path:'logout'
 
         },
     ]
@@ -44,6 +45,18 @@ const MenuList = () => {
     const router=useRouter();
 
     const onMenuClick=(item)=>{
+        if(item.path=='logout'){
+            signOut();
+            return;
+        }
+        if(item.path=='share'){
+            Share.share(
+                {
+                message:"Download My HouseCraft App on Google Playstore- GobiKisho "
+                }
+            )
+            return;
+        }
         router.push(item.path)
     }
 
